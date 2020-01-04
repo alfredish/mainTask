@@ -89,7 +89,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qiO-YG-2r4">
-                                <rect key="frame" x="0.0" y="44" width="414" height="643"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="599"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <inset key="scrollIndicatorInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rRH-Gy-NGV">
@@ -115,20 +115,37 @@
                                     <outlet property="delegate" destination="Xh0-r6-O2a" id="j7N-zB-z6g"/>
                                 </connections>
                             </collectionView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="ST0-ZE-ETP">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="2ke-Gu-lQX"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="qiO-YG-2r4" firstAttribute="bottom" secondItem="PCd-gO-aLu" secondAttribute="bottom" id="AZQ-Cn-6rk"/>
-                            <constraint firstItem="qiO-YG-2r4" firstAttribute="leading" secondItem="PCd-gO-aLu" secondAttribute="leading" id="QCu-gx-Ja8"/>
-                            <constraint firstItem="qiO-YG-2r4" firstAttribute="top" secondItem="PCd-gO-aLu" secondAttribute="top" id="gwn-9C-aQl"/>
-                            <constraint firstItem="qiO-YG-2r4" firstAttribute="trailing" secondItem="PCd-gO-aLu" secondAttribute="trailing" id="s9a-d1-KmX"/>
+                            <constraint firstItem="ST0-ZE-ETP" firstAttribute="leading" secondItem="PCd-gO-aLu" secondAttribute="leading" id="5YX-MD-GnH"/>
+                            <constraint firstItem="qiO-YG-2r4" firstAttribute="top" secondItem="ST0-ZE-ETP" secondAttribute="bottom" id="67y-w6-8Sk"/>
+                            <constraint firstItem="ST0-ZE-ETP" firstAttribute="trailing" secondItem="PCd-gO-aLu" secondAttribute="trailing" id="9EY-L6-5Rw"/>
+                            <constraint firstItem="ST0-ZE-ETP" firstAttribute="top" secondItem="PCd-gO-aLu" secondAttribute="top" id="CAj-ey-jZ2"/>
+                            <constraint firstItem="qiO-YG-2r4" firstAttribute="bottom" secondItem="PCd-gO-aLu" secondAttribute="bottom" id="Mer-wU-rQd"/>
+                            <constraint firstItem="qiO-YG-2r4" firstAttribute="leading" secondItem="ST0-ZE-ETP" secondAttribute="leading" id="YgV-9i-tQG"/>
+                            <constraint firstItem="qiO-YG-2r4" firstAttribute="trailing" secondItem="ST0-ZE-ETP" secondAttribute="trailing" id="u3C-sg-0DE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PCd-gO-aLu"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="l8z-8h-Nce"/>
                     <navigationItem key="navigationItem" title="findWorker" id="hdy-CJ-UE3">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="rYM-X7-aWD"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="rYM-X7-aWD">
+                            <connections>
+                                <action selector="addPeopleButton:" destination="Xh0-r6-O2a" id="BeL-Uy-Urp"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="qiO-YG-2r4" id="k9w-we-beb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u2q-9D-MM0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -197,21 +214,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VBM-Kz-Dc5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1368" y="1098"/>
-        </scene>
-        <!--addWorker-->
-        <scene sceneID="YNB-lV-D6g">
-            <objects>
-                <viewController title="addWorker" id="Mxk-iV-WrB" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="tlV-2g-9cz">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="fNU-d1-43Y"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wdp-nu-lf7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2549" y="1098"/>
         </scene>
         <!--Register/Login-->
         <scene sceneID="tne-QT-ifu">

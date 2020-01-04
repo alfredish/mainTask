@@ -15,6 +15,25 @@ class FindWorker: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    //MARK: добавление нового сотрудника
+    private func alertAddPeople(){
+        let alert = UIAlertController(title: "Введите email/login польователя", message: nil, preferredStyle: .alert)
+        alert.addTextField(configurationHandler: nil)
+        //добавить проверку на наличие такого пользователя и добавить на сервер и везде крч
+        let actionAdd = UIAlertAction(title: "+", style: .default) { [weak alert] (addAlert) in
+            print(alert?.textFields?.first?.text!)
+        }
+        let actionCancel = UIAlertAction(title: "-", style: .default, handler: nil)
+        alert.addAction(actionAdd)
+        alert.addAction(actionCancel)
+        self.present(alert,animated: true,completion: nil)
+    }
+    
+    @IBAction func addPeopleButton(_ sender: Any) {
+        alertAddPeople()
+    }
+    
 }
 
 extension FindWorker: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
@@ -33,3 +52,4 @@ extension FindWorker: UICollectionViewDataSource, UICollectionViewDelegate, UICo
         return CGSize(width: size, height: size)
     }
 }
+
