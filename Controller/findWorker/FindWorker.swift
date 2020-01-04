@@ -11,7 +11,7 @@ import UIKit
 class FindWorker: UIViewController {
 
     var countPeople:[String] = []
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -44,6 +44,7 @@ extension FindWorker: UICollectionViewDataSource, UICollectionViewDelegate, UICo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! FindWorkerCell
+        cell.backgroundColor = .red
         return cell
     }
     
