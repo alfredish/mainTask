@@ -20,6 +20,12 @@ class AllTask: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         searchViewDidLoad()
+        tableSetting()
+    }
+    
+    //настройки таблицы
+    private func tableSetting(){
+        tableView.tableFooterView = UIView()
     }
     
     //добавление searchbar 
